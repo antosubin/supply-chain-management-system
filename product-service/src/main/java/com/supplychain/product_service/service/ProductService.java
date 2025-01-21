@@ -9,8 +9,12 @@ import java.util.List;
 
 @Service
 public class ProductService {
-    @Autowired
-    private ProductRepository productRepository;
+//    @Autowired
+    private final ProductRepository productRepository;
+// Constructor Injection
+    public ProductService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
     public Product addProduct(Product product) {
 
